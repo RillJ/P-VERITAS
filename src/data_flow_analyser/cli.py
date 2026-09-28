@@ -37,7 +37,7 @@ from data_flow_analyser.parsers.mitm_parser import parse_flow_file
 from data_flow_analyser.models.schemas import ConsentOutcome
 from data_flow_analyser.web import serve
 
-app = typer.Typer(help="Data Flow Analyser command-line interface.")
+app = typer.Typer(help="P-VERITAS command-line interface.")
 console = Console()
 logger = logging.getLogger(__name__)
 
@@ -92,16 +92,16 @@ def callback(
         "--version",
         callback=version_callback,
         is_eager=True,
-        help="Show the Data Flow Analyser version and exit.",
+        help="Show the P-VERITAS version and exit.",
     ),
 ) -> None:
-    """Data Flow Analyser command-line interface."""
+    """P-VERITAS command-line interface."""
 
 
 @app.command()
 def healthcheck() -> None:
     """Confirm that the engine is ready."""
-    console.print(Panel("Data Flow Analyser engine ready", style="green"))
+    console.print(Panel("P-VERITAS engine ready", style="green"))
 
 
 @app.command("web")

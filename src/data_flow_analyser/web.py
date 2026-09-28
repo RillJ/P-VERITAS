@@ -53,7 +53,7 @@ from data_flow_analyser.pipeline import AuditPipeline, PIPELINE_STAGES
 
 WEB_PAGE = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Data Flow Analyser</title>
+<title>P-VERITAS</title>
 <style>
 :root { color-scheme: light; font: 16px system-ui, sans-serif; background: #f4f6f8; color: #17202a; }
 body { max-width: 980px; margin: 2rem auto; padding: 0 1rem; }
@@ -348,7 +348,7 @@ refreshProgress();
 def _form_page(error: str | None = None) -> str:
     message = f'<p style="color:#a51d2d"><strong>{html.escape(error)}</strong></p>' if error else ""
     return _page(f"""
-<h1>Data Flow Analyser</h1><p class="hint">Easy web utility for running technical privacy audits.</p>{message}
+<h1>P-VERITAS</h1><p class="hint">Easy web utility for running technical privacy audits.</p>{message}
 <section><h2>Review endpoints first</h2><p class="hint">This deterministic step lists every destination host used to help determine domains to be excluded before the audit pipeline.</p>
 <form method="post" action="/endpoints" enctype="multipart/form-data"><label>Capture files <input type="file" name="capture" multiple required></label><p class="hint">Choose one or more mitmproxy flow files or HAR captures. They are appended in selection order.</p><button type="submit">Gather endpoint evidence</button></form></section>
 <hr>
@@ -531,7 +531,7 @@ def _endpoint_result_page(run_id: str, run_dir: Path) -> str:
 def serve(host: str = "127.0.0.1", port: int = 8765) -> None:
     """Start the local browser interface until interrupted."""
     server = ThreadingHTTPServer((host, port), _Handler)
-    print(f"Data Flow Analyser web interface: http://{host}:{server.server_port}")
+    print(f"P-VERITAS web interface: http://{host}:{server.server_port}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

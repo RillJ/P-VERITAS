@@ -1,8 +1,10 @@
-# Beyond the Banner: AI-Powered Network Traffic Analysis for Privacy Risk Detection
+# P-VERITAS: a Privacy Verification and Traffic Analysis System
 
-`data-flow-analyser` is an open-source, AI-powered command-line tool for analysing captured HTTP(S) traffic from privacy-testing scenarios. It is designed to support technical privacy assessments and Data Protection Impact Assessments (DPIAs) by making observed data flows easier to inspect, classify, and compare with vendor documentation.
+P-VERITAS (**P**rivacy **Veri**fication and **T**raffic **A**nalysis **S**ystem) is a novel, open-source, AI-powered tool for analysing captured HTTP(S) traffic from privacy-testing scenarios. It is designed to support technical privacy assessments and Data Protection Impact Assessments (DPIAs) by making observed data flows easier to inspect, classify, and compare with vendor documentation.
 
-The tool analyses what a service actually sends over the network. It does not replace a privacy expert or make definitive legal determinations. Its output is an evidence-based risk map for human verification.
+P-VERITAS analyses what a web service actually sends over the network. It does not replace a privacy expert or make definitive legal determinations. Its output is an evidence-based risk map for human verification.
+
+P-VERITAS was developed and evaluated as part of J.C. Rill's Master's thesis in Cognitive Science at Osnabrück University, supervised by Dr. phil. Tobias Thelen and Dr. Ulf Krumnack, and partly funded by SURF. It represents a significant step toward more efficient, accurate, and transparent technical privacy assessments in the context of modern web services.
 
 ## Research context
 
@@ -10,7 +12,7 @@ Technical privacy assessments often depend on manual inspection of large mitmpro
 
 The central research question is:
 
-> How can an AI-based open-source tool automate the analysis of network traffic data, generated from privacy testing scenarios, to efficiently identify and assess privacy risks within the context of DPIAs?
+> How can an AI-enhanced, open-source tool support the automated analysis of network traffic captured during privacy testing scenarios to identify and assess privacy risks relevant to Data Protection Impact Assessments (DPIAs)?
 
 The current implementation contributes to that question by combining deterministic traffic analysis with Large Language Model (LLM) powered document extraction + cross-referencing and Named Entity Recognition (NER) personal data identification. The deterministic stages preserve technical evidence; the LLM is used to interpret structured evidence against policy claims. The tool is fully self-serving: feed it the necessary data, and an entire report rolls out, subject to human evaluation.
 
